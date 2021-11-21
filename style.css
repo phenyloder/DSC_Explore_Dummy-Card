@@ -1,0 +1,198 @@
+*{
+    font-family: Arial, sans-serif;
+}
+
+body{
+    background-color:white;
+    margin: 0;
+    padding: 0;
+}
+
+.outer-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: url("./background.jpg") 50%;
+}
+
+.inner-box{
+    background-color: #000000;
+    height: 80vh;
+    width: 60vh;
+    border-radius: 7%;
+    z-index: 1;
+    text-align: center;
+}
+.card-front,.card-back{
+    width: 100%;
+    backface-visibility: hidden;
+    transition: transform .3s linear;
+}
+
+.dsc-logo{
+    position: relative;
+    width: 120px;
+    top: 25vh;
+}
+
+.front-text{
+    position: relative;
+    color: white;
+    top: 20vh;
+}
+
+.text-nit{
+    position: relative;
+    color: white;
+    top: 20vh;
+}
+
+.explore{
+    position: relative;
+    top: 40vh;
+    color: white;
+
+}
+
+.card-front{
+    cursor: pointer;
+}
+
+.card-back{
+    position: absolute;
+    top: 10vh;
+    width: 60vh;
+    height: 80vh;
+    border-radius: 7%;
+}
+
+.heading{
+    position: relative;
+    height: 8vh;
+    background-color: #DB4437;
+    animation: colorChange 4s infinite;
+    border-top-left-radius: 29px;
+    border-top-right-radius: 29px;
+}
+
+@keyframes colorChange{
+    0%{
+        background-color: #DB4437;
+    }
+    25%{
+        background-color: #0F9D58;
+    }
+    50%{
+        background-color: #4285F4;
+    }
+    75%{
+       background-color: #F4B400; 
+    }
+}
+.heading-text{
+    position: relative;
+    top: 2vh;
+    color: white;
+    width: 600;
+    font-size: 26px;
+}
+
+.poster-img{
+    position: relative;
+    width:50vh;
+    margin: 2vh;
+    border-radius: 7%;
+}
+
+.sm a{
+    display: inline-flex;
+    width: 40px;
+    height: 40px;
+    justify-content: center;
+    align-items: center;
+    color: #2c3e50;
+    font-size: 18px;
+    transition: 0.4s;
+    text-decoration: none;
+    border-radius: 50%;
+}
+
+.sm a:hover{
+    background: #2c3e50;
+    color: white;
+}
+
+.text-content{
+    padding: 10px;
+    text-align: left;
+}
+
+.btn{
+    position: relative;
+    top: 2vh;
+    left: 18vh;
+    width: 25vh;
+    height: 7vh;
+    background: linear-gradient(0deg, #000, #272727);
+    border-radius: 10%;
+}
+  
+.btn:before, .btn:after {
+    border-radius: 15%;
+    content: '';
+    position: absolute;
+    left: -2px;
+    top: -2px;
+    background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000, #fb0094, 
+      #0000ff, #00ff00,#ffff00, #ff0000);
+    background-size: 400%;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    z-index: -1;
+    animation: steam 20s linear infinite;
+}
+  
+@keyframes steam {
+    0% {
+      background-position: 0 0;
+    }
+    50% {
+      background-position: 400% 0;
+    }
+    100% {
+      background-position: 0 0;
+    }
+}
+  
+.btn:after {
+    filter: blur(50px);
+}
+
+.join{
+    outline: none;
+    border: none;
+    background-color: #4285F4;
+    color: white;
+    height: 7vh;
+    width: 25vh;
+    border-radius: 15%;
+    font-size: 20px;
+    cursor: pointer;
+}
+.card-front{
+    transform: perspective(600px) rotateY(0deg)
+}
+
+.card-back{
+    background: rgb(236, 236, 236);
+    transform: perspective(600px) rotateY(180deg)
+}
+
+.inner-box:hover > .card-front{
+    transform: perspective(600px) rotateY(-180deg);
+}
+
+.inner-box:hover >.card-back{
+    transform: perspective(600px) rotateY(0deg);
+}
